@@ -217,9 +217,9 @@ var exponent = function(base, exp) {
     return base * exponent(base, exp - 1);
   }
 
-  // if (exp < 0) {
-  //   return base * exponent(base, exp + 1);
-  // }
+  if (exp < 0) {
+    return Number(1 / base * exponent(base, exp + 1).toFixed(4));
+  }
 
 
 };
