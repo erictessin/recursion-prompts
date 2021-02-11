@@ -22,8 +22,6 @@ var factorial = function(n) {
       return 1;
     }
 
-  // while n is greater than 0
-    // return n * factorial(n-1)
     return n * factorial(n - 1);
 
 };
@@ -92,7 +90,7 @@ var isEven = function(n) {
   // edges: none
   // constraints: should work with negative nums, should use recursion, should only take one arg
 
-  // find out a number is even without using
+  // find out a number is even without using mod
   // this is done by subtracting two from the number
 
   // if n is equal 0
@@ -125,6 +123,29 @@ var isEven = function(n) {
 // sumBelow(10); // 45
 // sumBelow(7); // 21
 var sumBelow = function(n) {
+
+  // input: number
+  // output: number
+  // edges: if n is zero, return zero
+  // constraints: works for negatives, must use recursion, takes one args
+
+  // if n is exactly equal to zero
+    // return zero
+
+  // create a sum variable equal to 0
+
+  // if n is greater than 0
+    // n = n - 1
+    //  sum += sumBelow(n)
+
+
+  // if n is less than 0
+    // n = n + 1
+    //  sum += sumBelow(n)
+
+  // return sum;
+
+
 };
 
 // 6. Get the integers within a range (x, y).
