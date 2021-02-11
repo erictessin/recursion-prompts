@@ -65,15 +65,60 @@ var sum = function(array) {
 // 3. Sum all numbers in an array containing nested arrays.
 // arraySum([1,[2,3],[[4]],5]); // 15
 var arraySum = function(array) {
+  var sumResult = 0;
+
+  // if array is empty
+    // return zero
+  if (array.length === 0) {
+    return 0;
+  }
+
   if (!Array.isArray(array)) {
     return array;
   }
 
+  array.forEach(function(item) {
+    sumResult += arraySum(item);
+  })
 
+  return sumResult;
 };
 
 // 4. Check if a number is even.
 var isEven = function(n) {
+
+  // input: number
+  // output: boolean (true for even/false for odd)
+  // edges: none
+  // constraints: should work with negative nums, should use recursion, should only take one arg
+
+  // find out a number is even without using modulo
+  // this is done by subtracting two from the number
+
+  // if n is equal 0
+    // return true
+  if (n === 0) {
+    return true;
+  }
+
+  // if n is ever equal to 1 or -1
+    // return false
+  if (n === 1 || n === -1) {
+    return false;
+  }
+
+  // if n is less than 0
+    // isEven(n + 2)
+  if (n < 0) {
+    return isEven(n + 2);
+  }
+  // if n is greater than 0
+    // isEven(n - 2);
+  if (n > 0) {
+    return isEven(n - 2);
+  }
+
+
 };
 
 // 5. Sum all integers below a given integer.
