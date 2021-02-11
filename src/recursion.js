@@ -129,33 +129,23 @@ var sumBelow = function(n) {
   // edges: if n is zero, return zero
   // constraints: works for negatives, must use recursion, takes one args
 
-  // create a sum variable equal to 0
   var sum = 0;
 
-  // if n is exactly equal to zero
-    // return zero
   if (n === 0) {
     return n;
   }
 
-  // if n is greater than 0
-    // n = n - 1
-    //  sum += sumBelow(n)
   if (n > 0) {
     n = n - 1;
-    sum += sumBelow(n);
+    sum += n + sumBelow(n);
   }
 
-  // if n is less than 0
-    // n = n + 1
-    //  sum += sumBelow(n)
   if (n < 0) {
     n = n + 1;
-    sum += sumBelow(n);
-    return n;
+    sum += n + sumBelow(n);
+
   }
 
-  // return sum;
   return sum;
 };
 
