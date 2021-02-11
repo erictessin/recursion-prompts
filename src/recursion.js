@@ -92,7 +92,7 @@ var isEven = function(n) {
   // edges: none
   // constraints: should work with negative nums, should use recursion, should only take one arg
 
-  // find out a number is even without using modulo
+  // find out a number is even without using
   // this is done by subtracting two from the number
 
   // if n is equal 0
