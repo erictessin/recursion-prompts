@@ -145,7 +145,7 @@ var sumBelow = function(n) {
 };
 
 // 6. Get the integers within a range (x, y).
-// range(2,9); // [3,4,5,6,7,8]
+// range(2,5); // [3,4]
 var range = function(x, y) {
 
   // input: two nums
@@ -155,15 +155,38 @@ var range = function(x, y) {
 
   // base case: we are moving towards y
 
+  // create an empty result array
+  var resultRange = [];
+
+  if (x === y || (x + 1) === y || (x - 1) === y) {
+    return [];
+  }
+
+  if (x === (y - 1)) {
+    return resultRange;
+  }
+
   // if x is greater than y
-    // then subtract one until x reaches y
+    // then subtract one from x
+    // push into result array
+
+  if (x > y) {
+    var nextRangeNum = x - 1;
+    resultRange.push(nextRangeNum);
+    resultRange = resultRange.concat(range(nextRangeNum, y));
+  }
 
   // if x is less than y
     // then add one until x reaches y
+    // push into result array
+  if (x < y) {
+    var nextRangeNum = x + 1;
+    resultRange.push(nextRangeNum);
+    resultRange = resultRange.concat(range(nextRangeNum, y));
+  }
 
-
-
-
+  // return result array
+  return resultRange;
 };
 
 // 7. Compute the exponent of a number.
