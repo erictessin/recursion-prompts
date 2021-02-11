@@ -124,11 +124,6 @@ var isEven = function(n) {
 // sumBelow(7); // 21
 var sumBelow = function(n) {
 
-  // input: number
-  // output: number
-  // edges: if n is zero, return zero
-  // constraints: works for negatives, must use recursion, takes one args
-
   var sum = 0;
 
   if (n === 0) {
@@ -152,6 +147,23 @@ var sumBelow = function(n) {
 // 6. Get the integers within a range (x, y).
 // range(2,9); // [3,4,5,6,7,8]
 var range = function(x, y) {
+
+  // input: two nums
+  // output: array of nums
+  // edges: should return empty array if no integers in range
+  // constraints: should accept negs, should accept starting integer thats larger than ending, must use recursion
+
+  // base case: we are moving towards y
+
+  // if x is greater than y
+    // then subtract one until x reaches y
+
+  // if x is less than y
+    // then add one until x reaches y
+
+
+
+
 };
 
 // 7. Compute the exponent of a number.
