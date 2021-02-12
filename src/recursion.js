@@ -229,6 +229,31 @@ var exponent = function(base, exp) {
 // powerOfTwo(16); // true
 // powerOfTwo(10); // false
 var powerOfTwo = function(n) {
+
+  // input: number
+  // output: boolean
+  // edges: none
+  // constraints: must use recusrion, should return false when num is not a power of two
+  // base case:
+
+  // if n is exactly equal to 1
+    // return true
+
+  if (n === 1) {
+    return true;
+  }
+
+  // if counter is greater than or equal to 2
+    // divide n by two and store in variable
+    // return powerOfTwo with the variable as its argument and return it
+
+  if (n >= 2) {
+    var dividedByTwo = n / 2;
+    return powerOfTwo(dividedByTwo);
+  }
+
+  return false;
+
 };
 
 // 9. Write a function that reverses a string.
