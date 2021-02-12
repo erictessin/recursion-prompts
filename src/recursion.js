@@ -271,34 +271,22 @@ var reverse = function(string) {
 
   */
 
-
-  // create a variable to hold a split version of the input string
-  // create a result variable that holds a blank array
-  var split = string.split('');
   var reversed = [];
+  var split = string.split('');
 
-  // if the split string length is equal to zero
-    // return result.join('')
-
-  // if (split.length === 0 || string === undefined) {
-  //   reversed = reversed.concat().join('');
-  // }
-
-  // create a variable to hold shifted letter
-  // push the shifted letter to the result array
-  if (split.length > 0) {
-    var shifted = split.pop();
-    reversed.push(shifted);
-    var joined = split.join('');
-    if (split.length === 0) {
-      reversed = reversed.concat(reverse(joined)).join('');
-      console.log(reversed);
-      return reversed;
-    }
-    reverse(joined);
+  if (split.length === 0) {
+    return;
   }
 
+  var lastLetter = split.pop();
 
+  reversed.push(lastLetter);
+
+  var joined = split.join('');
+
+  reversed = reversed.concat(reverse(joined));
+
+  return reversed.join('');
 
 };
 
