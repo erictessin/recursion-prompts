@@ -290,8 +290,39 @@ var reverse = function(string) {
 
 };
 
+// input: string
+// output: boolean
+// edges: none
+// constraints: should ignore caps and spaces
+// base case: if string.length === 0
+
 // 10. Write a function that determines if a string is a palindrome.
 var palindrome = function(string) {
+
+  var lowerCase = string.toLowerCase().split(" ").join('').split('');
+  console.log(lowerCase);
+
+  var reversed = [];
+
+  if (lowerCase.length === 0) {
+    return;
+  }
+
+  var lastLetter = lowerCase.pop();
+
+  reversed.push(lastLetter);
+
+  var joined = lowerCase.join('');
+
+  reversed = reversed.concat(palindrome(joined));
+
+  if (reversed.join('') === string + lastLetter) {
+    return true
+  }
+
+
+  return false;
+
 };
 
 // 11. Write a function that returns the remainder of x divided by y without using the
