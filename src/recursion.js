@@ -290,38 +290,37 @@ var reverse = function(string) {
 
 };
 
-// input: string
-// output: boolean
-// edges: none
-// constraints: should ignore caps and spaces
-// base case: if string.length === 0
 
 // 10. Write a function that determines if a string is a palindrome.
 var palindrome = function(string) {
 
-  var lowerCase = string.toLowerCase().split(" ").join('').split('');
-  console.log(lowerCase);
+  // input: string
+  // output: boolean
+  // edges: none
+  // constraints: should ignore caps and spaces
+  // base case: if string.length === 1
 
-  var reversed = [];
+  // use toLowerCase, split, and join to ignore caps and spaces
+  var lowerCase = string.toLowerCase().split(' ').join('');
 
-  if (lowerCase.length === 0) {
-    return;
+  // if string.length === 1
+    // return true
+
+  if (lowerCase.length === 1 || lowerCase.length === 0) {
+    return true;
   }
 
-  var lastLetter = lowerCase.pop();
-
-  reversed.push(lastLetter);
-
-  var joined = lowerCase.join('');
-
-  reversed = reversed.concat(palindrome(joined));
-
-  if (reversed.join('') === string + lastLetter) {
-    return true
+  // if the first character matches the last character
+    // slice first character
+    // slice last character
+    // pass remaining string to function
+  if (lowerCase[0] === lowerCase[lowerCase.length - 1]) {
+    lowerCase = lowerCase.slice(1).slice(0, -1);
+    palindrome(lowerCase);
+    return true;
+  } else {
+    return false;
   }
-
-
-  return false;
 
 };
 
