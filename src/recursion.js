@@ -412,24 +412,50 @@ var countValuesInObj = function(obj, value) {
   // base case:
 
   // create a blank array
-  var result = [];
+  var valCount = 0;
 
   // if obj is not an object
-    // push to array
+  // push to array
   if (obj === value) {
-    result.push(obj);
+    valCount++;
   }
 
+
   // loop through obj
-    // if typeof obj[i] === object
-      // run it through countValuesInObj
+  // if typeof obj[i] === object
+  // run it through countValuesInObj
   if (typeof obj === 'object') {
     Object.values(obj).forEach(function(item) {
-      result = result.concat(countValuesInObj(item, value));
-      // return result.length;
+      valCount += countValuesInObj(item, value);
     })
   }
-  return result;
+
+  return valCount;
+
+
+
+    // // create a blank array
+    // var result = [];
+
+    // // if obj is not an object
+    // // push to array
+    // if (obj === value) {
+    //   result.push(obj);
+    // }
+
+
+    // // loop through obj
+    // // if typeof obj[i] === object
+    // // run it through countValuesInObj
+    // if (typeof obj === 'object') {
+    //   Object.values(obj).forEach(function(item) {
+    //     result = result.concat(countValuesInObj(item, value));
+    //     console.log(result);
+    //   })
+    // }
+
+    // return result;
+
 
 };
 
