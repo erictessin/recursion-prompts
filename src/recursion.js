@@ -450,7 +450,7 @@ var replaceKeysInObj = function(obj, oldKey, newKey) {
       if (key === oldKey) {
         obj[newKey] = obj[key];
         delete obj[key];
-      }
+    }
 
       if (typeof obj[key] === 'object') {
         replaceKeysInObj(obj[key], oldKey, newKey);
