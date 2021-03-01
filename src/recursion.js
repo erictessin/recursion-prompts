@@ -330,6 +330,35 @@ var palindrome = function(string) {
 // modulo(17,5) // 2
 // modulo(22,6) // 4
 var modulo = function(x, y) {
+
+// input: two numbers
+// output: one number (the remainder)
+// constraints: use recursion
+// edges: n/a
+
+x = Math.abs(x);
+y = Math.abs(y);
+
+var sum = x - y;
+
+if (sum < y) {
+  return sum;
+}
+
+sum = modulo(sum, y);
+
+return sum;
+
+
+
+
+
+
+
+
+
+
+
 };
 
 // 12. Write a function that multiplies two numbers without using the * operator or
