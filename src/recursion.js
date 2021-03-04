@@ -329,15 +329,48 @@ var palindrome = function(string) {
 // modulo(5,2) // 1
 // modulo(17,5) // 2
 // modulo(22,6) // 4
+console.log(-(-79));
 var modulo = function(x, y) {
 
-// input: two numbers
-// output: one number (the remainder)
-// constraints: use recursion
-// edges: n/a
+if ((x < 0 && y < 0) && x > y) {
+  return x;
+}
 
-x = Math.abs(x);
-y = Math.abs(y);
+if ((x < 0 && y < 0) && x < y) {
+  sum =  x - y;
+  if (sum > y) {
+    return sum;
+  }
+  sum = modulo(sum, y);
+  return sum;
+}
+
+if ((x < 0 && y > 0) && x < y && (-x >= y)) {
+  var negSum = x + y;
+  if (-negSum < y) {
+    return negSum;
+  }
+
+  if (negSum === 0) {
+    return -0;
+  }
+
+  negSum = modulo(negSum, y);
+  return negSum;
+}
+
+if (x === 0 && y === 0) {
+  return NaN;
+}
+
+if (x === 0) {
+  return 0;
+}
+
+if ((x < y)) {
+
+  return x;
+}
 
 var sum = x - y;
 
@@ -348,16 +381,6 @@ if (sum < y) {
 sum = modulo(sum, y);
 
 return sum;
-
-
-
-
-
-
-
-
-
-
 
 };
 
