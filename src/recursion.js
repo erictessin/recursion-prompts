@@ -346,17 +346,17 @@ if ((x < 0 && y < 0) && x < y) {
 }
 
 if ((x < 0 && y > 0) && x < y && (-x >= y)) {
-  var negSum = x + y;
-  if (-negSum < y) {
-    return negSum;
+  var sum = x + y;
+  if (-sum < y) {
+    return sum;
   }
 
-  if (negSum === 0) {
+  if (sum === 0) {
     return -0;
   }
 
-  negSum = modulo(negSum, y);
-  return negSum;
+  sum = modulo(sum, y);
+  return sum;
 }
 
 if (x === 0 && y === 0) {
