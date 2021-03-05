@@ -329,7 +329,14 @@ var palindrome = function(string) {
 // modulo(5,2) // 1
 // modulo(17,5) // 2
 // modulo(22,6) // 4
-console.log(-(-79));
+
+// Cleaner Answer From Stack Overflow
+// if (y === 0) { return NaN;}
+// if (x < 0) { return -modulo(-x,  y); };
+// if (y < 0) { return  modulo( x, -y); };
+// if (x < y) { return  x; };
+// return modulo(x - y, y);
+
 var modulo = function(x, y) {
 
 if ((x < 0 && y < 0) && x > y) {
