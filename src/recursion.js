@@ -339,12 +339,8 @@ var palindrome = function(string) {
 
 var modulo = function(x, y) {
 
-if ((x < 0 && y < 0) && x > y) {
-  return x;
-}
-
 if ((x < 0 && y < 0) && x < y) {
-  sum =  x - y;
+    sum =  x - y;
   if (sum > y) {
     return sum;
   }
@@ -354,36 +350,26 @@ if ((x < 0 && y < 0) && x < y) {
 
 if ((x < 0 && y > 0) && x < y && (-x >= y)) {
   var sum = x + y;
-  if (-sum < y) {
-    return sum;
-  }
 
-  if (sum === 0) {
-    return -0;
-  }
+  if (-sum < y) { return sum; }
+
+  if (sum === 0) { return -0; }
 
   sum = modulo(sum, y);
   return sum;
 }
 
-if (x === 0 && y === 0) {
-  return NaN;
-}
+if ((x < 0 && y < 0) && x > y) { return x; }
 
-if (x === 0) {
-  return 0;
-}
+if (x === 0 && y === 0) { return NaN; }
 
-if ((x < y)) {
+if (x === 0) { return 0; }
 
-  return x;
-}
+if (x < y) { return x; }
 
 var sum = x - y;
 
-if (sum < y) {
-  return sum;
-}
+if (sum < y) { return sum; }
 
 sum = modulo(sum, y);
 
@@ -394,6 +380,27 @@ return sum;
 // 12. Write a function that multiplies two numbers without using the * operator or
 // Math methods.
 var multiply = function(x, y) {
+
+  // input: number, number
+  // output: number
+  // constraints: no complex math (*, /, %, Math, modulo)
+  // edges: n/a
+
+  // create a sum variable equal to 0
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 };
 
 // 13. Write a function that divides two numbers without using the / operator or
