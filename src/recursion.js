@@ -377,29 +377,8 @@ return sum;
 
 };
 
-
-// input: number, number
-// output: number
-// constraints: no complex math (*, /, %, Math, modulo)
-// edges: n/a
-// base case:
-// create a sum variable equal to 0
-
-// if x > y
-  // if y > 0
-    // y--
-    // sum = (maybe sum+=?) modulo(x, y);
-
-// if x < y
-  // if x > 0
-    // x--
-    // sum = (maybe sum+=?) modulo(x, y);
-
-// return sum
-
 // 12. Write a function that multiplies two numbers without using the * operator or
 // Math methods.
-// (-3, 4)
 var multiply = function(x, y) {
 
   var sum = 0;
